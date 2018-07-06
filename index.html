@@ -11,6 +11,7 @@
 <style>
     :root {
       --bg: #000;
+      --font: #fff;
     }
 
     body {
@@ -50,7 +51,7 @@
     #result-box {
         width: 20%;
         margin: auto;
-        color: #fff;
+        color: var(--font);
         padding: 10px 10px;
         margin-top: 100px;
         border-radius: 5px;
@@ -79,18 +80,18 @@
 <script>
 
     const classObj = [
-        {class: "Deathknight", color: "#C41F3B"},
-        {class: "Monk", color: "#00FF96"},
-        {class: "Warrior", color: "#C79C6E"},
-        {class: "Paladin", color: "#F58CBA"},
-        {class: "Hunter", color: "#ABD473"},
-        {class: "Rogue", color: "#FFF569"},
-        {class: "Priest", color: "#FFFFFF"},
-        {class: "Shaman", color: "#0070DE"},
-        {class: "Mage", color: "#69CCF0"},
-        {class: "Warlock", color: "#9482C9"},
-        {class: "Druid", color: "#FF7D0A"},
-        {class: "Demon Hunter", color: "#A330C9"},
+        {class: "Deathknight", color: "#C41F3B", font: "#fff"},
+        {class: "Monk", color: "#00FF96", font: "#fff"},
+        {class: "Warrior", color: "#C79C6E", font: "#fff"},
+        {class: "Paladin", color: "#F58CBA", font: "#fff"},
+        {class: "Hunter", color: "#ABD473", font: "#fff"},
+        {class: "Rogue", color: "#FFF569", font: "#000"},
+        {class: "Priest", color: "#FFFFFF", font: "#000"},
+        {class: "Shaman", color: "#0070DE", font: "#fff"},
+        {class: "Mage", color: "#69CCF0", font: "#fff"},
+        {class: "Warlock", color: "#9482C9", font: "#fff"},
+        {class: "Druid", color: "#FF7D0A", font: "#fff"},
+        {class: "Demon Hunter", color: "#A330C9", font: "#fff"},
     ];
 
     const keys = Object.keys(classObj);
@@ -100,6 +101,7 @@
     function displaySelection(obj) {
         document.getElementById('result').innerHTML = chosenClass.class;
         document.getElementById('result-box').style.setProperty('--bg', chosenClass.color);
+        document.getElementById('result-box').style.setProperty('--font', chosenClass.font);
         document.getElementById('result-box').style.display='block';
     };
 
